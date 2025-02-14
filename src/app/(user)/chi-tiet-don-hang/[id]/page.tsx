@@ -15,8 +15,9 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
     userId: token?.id,
     orderId: id,
   };
+  if (!token) return <div className="mt-52 text-center">Bạn chưa đăng nhập!</div>;
   const res = await orderReq.getOrderDetail<OrderType>(body, token?.accessToken);
-  // console.log('order------>',res);
+  // console.log('order------>', res);
   if (!res.id) return <div className="mt-52 text-center">Đơn hàng không tồn tại</div>;
   return (
     <div>
@@ -116,16 +117,16 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
           <CardContent className="space-y-2">
             {res?.orderItems.map(item => (
               <>
-                <div className='md:flex items-center gap-2'>
+                <div className="md:flex items-center gap-2">
                   <Image
                     src={item.variant.product && item.variant.product.images.length > 0 ? item.variant.product.images[0].url : ''}
                     alt="anh"
                     height={50}
                     width={40}
                   />
-                  <div className='flex gap-2'>
+                  <div className="flex gap-2">
                     <p>{item?.variant.product?.name}</p>
-                    <div className='flex items-center  text-gray-500'>
+                    <div className="flex items-center  text-gray-500">
                       {item.variant.attributeValues.length > 0 &&
                         item.variant.attributeValues.map((i, index) => (
                           <p key={i.id + i.value}>{(index ? ', ' : '') + i.value}</p>
@@ -134,7 +135,8 @@ const OrderPage = async ({ params }: { params: { id: string } }) => {
                   </div>
                 </div>
                 <p>
-                  <strong>Tổng tiền:</strong> <span className="text-red-600 font-bold">{item.orderedPrice.toLocaleString('vi-VN')} đ</span>
+                  <strong>Tổng tiền:</strong>{' '}
+                  <span className="text-red-600 font-bold">{item.orderedPrice.toLocaleString('vi-VN')} đ</span>
                 </p>
               </>
             ))}
