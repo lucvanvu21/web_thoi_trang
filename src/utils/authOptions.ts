@@ -28,7 +28,7 @@ export const authOptions: NextAuthOptions = {
         const res = await http.post<IBackendResponse<ILogin>>('/auth/login', {
           body,
         });
-        console.log('res--->', res);
+        // console.log('res--->', res);
         // console.log('auth--->', res);
         if (res.statusCode === 201) {
           const decoded = jwtDecode<DecodedToken>(res.data.accessToken);

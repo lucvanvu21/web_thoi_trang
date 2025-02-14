@@ -11,7 +11,7 @@ const UserPage = async ({ searchParams }: { searchParams: { page: number; name: 
   const name = searchParams.name
   const token = await getServerSession(authOptions);
   const res = await userReq.getAll<UserPaginateType>(token.accessToken, page, name);
-  console.log('data:---->', res);
+  // console.log('data:/---->', res);
   return (
     <div>
       <TableProduct<UserType> dataProduct={res.items} columns={columns} paginate={res.meta} product={false} user={true} />

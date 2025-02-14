@@ -209,7 +209,7 @@ type PropsType = {
 };
 
 const DashboardCom = ({ thongKeBanHang, tongDoanhThu, overview, topSellingProducts, totalOrder, totalProduct }: PropsType) => {
-  console.log('thongKeBanHang->', totalProduct);
+  // console.log('thongKeBanHang->', totalProduct);
   const [orderTable, setOrderTable] = useState<OrderPaginateType>(null);
   const { data: session } = useSession();
   useEffect(() => {

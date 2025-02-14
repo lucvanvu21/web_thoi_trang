@@ -23,10 +23,10 @@ export async function middleware(request: NextRequest) {
     req: request,
     secret: process.env.NEXTAUTH_SECRET,
   });
-  console.log('token-->', token);  
+  // console.log('token-->', token);  
   if (!token || token.accessTokenExpires === 0) {
     // response.cookies.delete('token');
-    console.log('token hết hạn');
+    // console.log('token hết hạn');
     return NextResponse.redirect(new URL('/', request.url));
   }
   // console.log('token-------->', token);

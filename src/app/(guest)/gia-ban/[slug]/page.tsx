@@ -14,7 +14,7 @@ const PriceSale = async ({
   const sort = searchParams.sort ? searchParams.sort : 'moi-nhat';
   const price = parseInt(params.slug.replace('k', ''), 10) * 1000;
   const res = await productReq.getByPrice<ProductPaginateType>(page, sort, price);
-  console.log(price);
+  // console.log(price);
   if (!res?.items || res.items.length === 0) return <div>Không có sản phẩm!</div>;
 
   return (

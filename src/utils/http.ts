@@ -14,7 +14,7 @@ export const sendRequest = async <T>(method: 'POST' | 'GET' | 'PUT' | 'PATCH' | 
       'Content-type': 'application/json',
     };
     const fullUrl = url.startsWith('/') ? `${backendUrl}${url}` : `${backendUrl}/${url}`;
-    console.log('---->tags:',fullUrl, nextTags, key);
+    // console.log('---->tags:',fullUrl, nextTags, key);
     // console.log('---->fullUrl:', fullUrl, '---->body:', body, '--->option:', options);
     const res = await fetch(fullUrl, {
       cache: 'force-cache',

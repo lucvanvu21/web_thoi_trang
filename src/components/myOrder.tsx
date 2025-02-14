@@ -8,7 +8,7 @@ import { Button } from './ui/button';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 const MyOrder2 = ({ res }: { res: OrderPaginateType }) => {
-  console.log('res', res);
+  // console.log('res', res);
   return (
     <div>
       {res.meta.totalItems > 0 ? (

@@ -175,7 +175,7 @@ const FormProduct = ({
     setQuantity(0);
   };
 
-  console.log('cate', dataProduct);
+  // console.log('cate', dataProduct);
   const uploadImgsToCloud = async () => {
     const images: File[] = [];
     form.getValues('image1') && images.push(form.getValues('image1')[0]);

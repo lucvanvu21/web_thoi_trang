@@ -70,7 +70,7 @@ const OrderDetail = ({ data }: { data: OrderType }) => {
       setLoading(1);
       // const res = await orderReq.updateStatus<IRes>(data.id, status, session?.accessToken);
       const res = await updateStatus(data.id, status, session?.accessToken);
-      console.log('res', res);
+      // console.log('res', res);
       if (res?.statusCode === 200) {
         toast({
           title: 'Cập nhật thành công',

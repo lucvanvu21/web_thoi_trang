@@ -23,7 +23,7 @@ const DashboardPage = async () => {
   >(token?.accessToken);
   const totalOrder = await dashboardReq.totalOrder<number>(token?.accessToken);
   const totalProduct = await dashboardReq.totalProduct<number>(token?.accessToken);
-  console.log('totalProduct->', totalProduct);
+  // console.log('totalProduct->', totalProduct);
   // console.log('token->', token);
   return (
     <div>

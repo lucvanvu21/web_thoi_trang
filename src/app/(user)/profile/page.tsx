@@ -49,7 +49,7 @@ const Profile = () => {
   async function onSubmit(accessToken: string, values: UpdateUserType) {
     // console.log(values);/
     const res = await userReq.updateUser<IRes>(accessToken, values);
-    console.log('res form', res);
+    // console.log('res form', res);
     if (res.error) {
       toast({
         variant: 'destructive',

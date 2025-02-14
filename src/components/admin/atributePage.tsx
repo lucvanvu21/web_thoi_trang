@@ -52,7 +52,7 @@ const AtributePage = ({ dataAtt }: { dataAtt: AttributeType[] }) => {
     }
   };
   const onSubmitUpdate = async (accessToken: string, values: CreateAttributeType, id: number) => {
-    console.log(id);
+    // console.log(id);
     const res = await attributeReq.updateAttribute<IRes>(accessToken, values, id);
     if (res.statusCode === 200) {
       toast({
@@ -97,9 +97,9 @@ const AtributePage = ({ dataAtt }: { dataAtt: AttributeType[] }) => {
         id: Number(selectedId),
       },
     };
-    console.log(body, values);
+    // console.log(body, values);
     const res = await attributeReq.updateAttValue<IRes>(accessToken, body, id);
-    console.log(res);
+    // console.log(res);
     if (res.statusCode === 200) {
       toast({
         title: 'Cập nhật thành công',
@@ -251,7 +251,7 @@ const FormAtt = ({
   data?: any;
   isValue?: boolean;
 }) => {
-  console.log(data);
+  // console.log(data);
   const form = useForm<CreateAttributeType>({
     resolver: zodResolver(CreateAttribute),
     defaultValues: {

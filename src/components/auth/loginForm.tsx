@@ -25,7 +25,7 @@ const LoginForm = () => {
   async function onSubmit(values: LoginBodyType) {
     // console.log(values);/
     const res = await authenticate(values.email, values.password);
-    console.log('res form', res);
+    // console.log('res form', res);
     if (!res.ok) {
       toast({
         variant: 'destructive',

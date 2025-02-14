@@ -30,7 +30,7 @@ export function NavUser({
   const [accessToken, setAccessToken] = useState('');
 
   const { data: session } = useSession();
-  console.log('session', session);
+  // console.log('session', session);
   useEffect(() => {
     // console.log(session);
     if (session) {

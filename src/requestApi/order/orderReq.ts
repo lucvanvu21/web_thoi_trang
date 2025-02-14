@@ -45,7 +45,7 @@ export const orderReq = {
   },
 
   updateStatus: async <T>(id: number, body: OrderStatusType, accessToken: string) => {
-    console.log('body---->', body, accessToken);
+    // console.log('body---->', body, accessToken);
     return http.patch<T>(
       `/admin/order/update-status/${id}`,
       { body },

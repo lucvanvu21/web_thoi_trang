@@ -11,7 +11,7 @@ const OrderPage = async ({ searchParams }: { searchParams: { page: number } }) =
   const page = searchParams.page || 1;
   // console.log(page, token);
   const res = await orderReq.getAll<OrderPaginateType>(page, token.accessToken);
-  console.log(res);
+  // console.log(res);
   if (!res.items) return <div>Không có dữ liệu</div>;
   return (
     <div>

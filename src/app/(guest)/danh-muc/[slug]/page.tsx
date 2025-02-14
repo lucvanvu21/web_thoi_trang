@@ -18,7 +18,7 @@ const CategoryPage = async ({
   const page = searchParams.page ? parseInt(searchParams.page) : 1;
   const sort = searchParams.sort ? searchParams.sort : 'moi-nhat';
   const res = await productReq.getByCategory<ProductPaginateType>(slug,page,24,sort);
-  console.log(res);
+  // console.log(res);
   if (!res?.items || res.items.length === 0) return <div>Không có sản phẩm!</div>;
 
   return (

@@ -22,7 +22,7 @@ export const useCartStore = create<CartState>()(
       addItemToCart: item =>
         set(state => {
           const existingItem = state.cart.find(i => i.variantId === item.variantId);
-          console.log('existingItem', existingItem, item);
+          // console.log('existingItem', existingItem, item);
           let newCart;
           if (existingItem) {
             newCart = state.cart.map(i => (i.variantId === item.variantId ? { ...i, quantity: i.quantity + item.quantity } : i));
