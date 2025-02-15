@@ -137,21 +137,21 @@ const TableProduct = <TItem, TProduct extends boolean = false>({
           />
         ) : product ? (
           <Input
-          placeholder="Tìm kiếm sản phẩm ..."
-          value={(table?.getColumn('name')?.getFilterValue() as string) ?? ''}
-          onChange={event => {
-            table.getColumn('name')?.setFilterValue(event.target.value);
-          }}
-          className="max-w-sm"
+            placeholder="Tìm kiếm sản phẩm ..."
+            value={(table?.getColumn('name')?.getFilterValue() as string) ?? ''}
+            onChange={event => {
+              table.getColumn('name')?.setFilterValue(event.target.value);
+            }}
+            className="max-w-sm"
           />
         ) : (
           <Input
-          placeholder="Tìm kiếm theo tên khách ..."
-          value={(table?.getColumn('fullName')?.getFilterValue() as string) ?? ''}
-          onChange={event => {
-            table.getColumn('fullName')?.setFilterValue(event.target.value);
-          }}
-          className="max-w-sm"
+            placeholder="Tìm kiếm theo tên khách ..."
+            value={(table?.getColumn('fullName')?.getFilterValue() as string) ?? ''}
+            onChange={event => {
+              table.getColumn('fullName')?.setFilterValue(event.target.value);
+            }}
+            className="max-w-sm"
           />
         )}
 
@@ -235,8 +235,8 @@ const TableProduct = <TItem, TProduct extends boolean = false>({
                         ) : (
                           <DropdownMenuItem
                             onClick={() => {
-                              if (product && (row.original as ProductType).id) {
-                                router.push(`/admin/order/${(row.original as ProductType).id}`);
+                              if (row.original) {
+                                router.push(`/admin/order/${row.original.id}`);
                               }
                             }}
                           >
